@@ -243,8 +243,8 @@
         selectedFlavor = flavor;
         const params = new URLSearchParams();
         params.append('type', selectedAlcoholType);
-        params.append('soda', encodeURIComponent(selectedSoda));
-        params.append('flavor', encodeURIComponent(selectedFlavor));
+        params.append('soda', selectedSoda);
+        params.append('flavor', selectedFlavor);
         
         const res = await fetch(`/api/recommend?${params.toString()}`);
         const items = await res.json();
