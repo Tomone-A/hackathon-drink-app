@@ -22,7 +22,13 @@ orders = []  # 注文履歴を保持
 
 
 @app.route("/")
+def welcome():
+    # トップページ（QRコードで最初にアクセスする場所）は Welcome画面
+    return render_template("welcome.html")
+
+@app.route("/menu")
 def index():
+    # 「注文を始める」を押したら、いつものメニュー画面を表示
     return render_template("index.html")
 
 
