@@ -53,9 +53,9 @@ def recommend():
     if flavor:
         results = [item for item in results if item["flavor"] == flavor]
     
-    # マッチするものがなければ指定されたタイプのみで返す
-    if not results and alcohol_type:
-        results = [item for item in MENU if item["type"] == alcohol_type][:3]
+    # 3つの条件に合致するもの1つだけ返す
+    if results:
+        results = [results[0]]
     
     return jsonify(results)
 
